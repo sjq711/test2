@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="./animate.css">
-    <link rel="stylesheet" href="./move.css">
     <script>
         (function (doc, win) {
       var docEl = doc.documentElement,
@@ -55,7 +54,7 @@
         .topTime{
             font-size: .42rem;
             position: absolute;
-            top: 1.4rem;
+            top: 1.3rem;
             left: 50%;
             transform: translateX(-50%);
             -webkit-transform: translateX(-50%);
@@ -68,7 +67,8 @@
         .loop{
             position: relative;
             text-align: center;
-            width: 100%; 
+            width: 100%;
+            height: 5.81rem; 
         }
         .loop img{
             width: 5.45rem;
@@ -117,7 +117,38 @@
             -webkit-transform: rotate(180deg);
         }
         
-        
+        @keyframes move {
+            0%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+            50%{
+                transform: translateX(0.16rem);
+                -webkit-transform: translateX(0.16rem);
+            }
+            100%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+        }
+        @-webkit-keyframes move {
+            0%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+            50%{
+                transform: translateX(0.16rem);
+                -webkit-transform: translateX(0.16rem);
+            }
+            100%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+        }
+        .spanWarp{
+            animation: move 0.8s steps(1, start) 1s infinite;
+            -webkit-animation: move 0.8s steps(1, start) 1s infinite;
+        }
         .lvWarp{
             margin-top: 0.9rem;
             display:flex;
@@ -179,7 +210,7 @@
         </div>
         <div class="headImg">
             <div class="loop">
-                <img src="./images/03.jpg" alt=""> 
+                <!-- <img src="./images/03.jpg" alt="">  -->
                 <div class="point pointTop">
                     <div class="spanWarp">
                         <span></span>
