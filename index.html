@@ -145,9 +145,9 @@
                 -webkit-transform: translateX(0);
             }
         }
-        .spanWarp{
-            /* animation: move 0.8s steps(1, start) 1s infinite;
-            -webkit-animation: move 0.8s steps(1, start) 1s infinite; */
+        .spanWarpMove{
+            animation: move 0.8s steps(1, start) 1s infinite;
+            -webkit-animation: move 0.8s steps(1, start) 1s infinite;
         }
         .lvWarp{
             margin-top: 0.9rem;
@@ -212,7 +212,7 @@
             <div class="loop">
                 <img src="./images/03.jpg" alt=""> 
                 <div class="point pointTop">
-                    <div class="spanWarp animate__animated animate__infinite animate__slideInDown">
+                    <div class="spanWarp">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -227,7 +227,7 @@
                     </div>
                 </div>
                 <div class="point pointLeft">
-                    <div class="spanWarp animate__animated animate__infinite animate__slideInDown">
+                    <div class="spanWarp">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -242,7 +242,7 @@
                     </div>
                 </div>
                 <div class="point pointRight">
-                    <div class="spanWarp animate__animated animate__infinite animate__slideInDown">
+                    <div class="spanWarp">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -257,7 +257,7 @@
                     </div>
                 </div>
                 <div class="point pointBottom">
-                    <div class="spanWarp animate__animated animate__infinite animate__slideInDown">
+                    <div class="spanWarp">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -325,5 +325,11 @@
     }
     getCurrentTime('only')
     setInterval(getCurrentTime,1000)
+    setTimeout(function(){
+        document.querySelector('.pointTop .spanWarp').classList.add('spanWarpMove')
+        document.querySelector('.pointLeft .spanWarp').classList.add('spanWarpMove')
+        document.querySelector('.pointRight .spanWarp').classList.add('spanWarpMove')
+        document.querySelector('.pointBottom .spanWarp').classList.add('spanWarpMove')
+    },1000)
 </script>
 </html>
