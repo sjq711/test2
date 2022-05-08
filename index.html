@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./animate.css">
+    <script>
+        (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          
+          docEl.style.fontSize = Math.floor (100 * (clientWidth / 1080)) + 'px';
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+    <style>
+        html,body{
+            width: 100%;
+            height: auto;
+            margin: 0;
+            background: #f3f3f1;
+            font-size: 0;
+            user-select:none;
+            -webkit-user-select: none;
+        }
+        body{
+            text-size-adjust: 100% !important;
+            -webkit-text-size--adjust: 100% !important;
+        }   
+        .warp{
+            width: 100%;
+            background: white;
+        }
+        img{
+            width: 100%;
+        }
+        .headImg{
+            background: url('./images/white_03.jpg') no-repeat top center;
+            background-size: cover;
+            position: relative;
+        }
+        .topWarp{
+            position: relative;
+        }
+        .topTime{
+            font-size: .42rem;
+            position: absolute;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            color: #626365;
+        }
+        .topTime p{
+            margin: 0;
+            text-align: center;
+        }
+        .loop{
+            position: relative;
+            text-align: center;
+            width: 100%; 
+        }
+        .loop img{
+            width: 5.45rem;
+            height: 5.45rem;
+            margin-top: 0.36rem;
+        }
+        .loop .point{
+            position: absolute;
+            width: 5.8rem;
+        }
+        .point span{
+            width: 0.26rem;
+            height: 0.26rem;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: #1f8ffb;
+            margin-right: 0.26rem;
+        }
+        .point span:last-child{
+            /* margin-right: 0; */
+        }
+        .pointTop{
+            top: 0;
+            left: 2.6rem;
+        }
+        .pointLeft{
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            transform-origin: 0 0;
+            -webkit-transform-origin: 0 0;
+            top: 5.9rem;
+            left: 2.4rem;
+        }
+        .pointRight{
+            top: 5.75rem;
+            right: 2.65rem;
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform-origin: right bottom;
+            -webkit-transform-origin: right bottom;
+        }
+        .pointBottom{
+            top: 5.95rem;
+            left: 2.55rem;
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+        }
+        .spanWarp{
+            animation: move 1s steps(1) infinite ;
+        }
+        @keyframes move {
+            0%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+            50%{
+                transform: translateX(0.16rem);
+                -webkit-transform: translateX(0.16rem);
+            }
+            100%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+        }
+        .lvWarp{
+            margin-top: 0.9rem;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lvWarp img{
+            width: 1.13rem;
+        }
+        .gif{
+            font-size: .7rem;
+            color: #13c411;
+            padding: 0 .2rem 0 .3rem;
+        }
+        .dayWarp{
+            position: relative;
+        }
+        .bigDayWarp{
+            position: absolute;
+            right: 1.7rem;
+            top: .6rem;
+            font-size: .34rem;
+            color: #9d9d9f;
+        }
+        .bigDay{
+            font-family: arial,sans-serif;
+            font-size: 1.1rem;
+            color: #1d92f1;
+            font-weight: bold;
+        }
+        .date{
+            position: absolute;
+            top: 6.17rem;
+            left: 7.5rem;
+            font-size: 0.4rem;
+            transform: scaleY(1.05);
+            -webkit-transform: scaleY(1.05);
+        }
+        .date2{
+            top: 7rem;
+            color: #d53a42;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="topWarp">
+            <img src="./images/02.jpg" alt="">
+            <div class="topTime">
+                <p class="topTimeMonth"></p>
+                <p class="topTimehou"></p>
+            </div>
+        </div>
+        <div class="headImg">
+            <div class="loop">
+                <img src="./images/03.jpg" alt=""> 
+                <div class="point pointTop">
+                    <div class="spanWarp">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="point pointLeft">
+                    <div class="spanWarp">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="point pointRight">
+                    <div class="spanWarp">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="point pointBottom">
+                    <div class="spanWarp">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="lvWarp">
+                <img src="./images/lv.jpg" alt="">
+                <div class="gif animate__animated animate__infinite animate__slow animate__flash">扫码未见异常</div>
+                <embed src="./wenhao.svg" type="image/svg+xml" />
+            </div>
+        </div>
+        <div class="dayWarp">
+            <img src="./images/04.jpg" alt="">
+            <div class="bigDayWarp">时间<span class="bigDay">0</span>天</div>
+            <div class="date date1"></div>
+            <div class="date date2"></div>
+        </div>
+        <div><img src="./images/bot.jpg" alt=""></div>
+    </div>
+    <!-- <img class="del" src="./images/a.jpeg" alt=""> -->
+</body>
+<script>
+    function bb(d){
+        if(d<10){
+            return '0' + d
+        }
+        return d
+    }
+    document.querySelector('title').innerHTML = decodeURIComponent('%E5%81%A5%E5%BA%B7%E5%AE%9D')
+    if(window.location.search !== '?a=1'){
+        document.body.innerText = ''
+    }
+    function getCurrentTime(flag){
+        var now = new Date()
+        var year = now.getYear()+1900;
+        var month = now.getMonth() + 1;
+        if(month < 10){
+            month = '0' + month
+        }
+        var day = now.getDate();
+        if(day < 10){
+            day = '0' + day
+        }
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var sec = now.getSeconds();
+        var nowDate = year + '年' + month + '月' + day + '日'
+        var time = bb(h)+':'+bb(m)+':'+bb(sec)
+        document.querySelector('.topTimeMonth').innerText = nowDate
+        document.querySelector('.topTimehou').innerText = time
+        if(flag === 'only'){
+            let fecthDate = new Date(now.getTime()-600000)
+            document.querySelector('.date1').innerText = bb(fecthDate.getMonth() + 1)+'-'+bb(fecthDate.getDate())+' '+bb(fecthDate.getHours())+':'+bb(fecthDate.getMinutes())
+            document.querySelector('.date2').innerText = month+'-'+day+' 24:00'
+        }
+    }
+    getCurrentTime('only')
+    setInterval(getCurrentTime,1000)
+</script>
+</html>
