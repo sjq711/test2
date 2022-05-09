@@ -7,20 +7,29 @@
     <title></title>
     <link rel="stylesheet" href="./animate.css">
     <script>
-        (function (doc, win) {
-      var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function () {
-          var clientWidth = docEl.clientWidth;
-          if (!clientWidth) return;
-          
-          docEl.style.fontSize = Math.floor (100 * (clientWidth / 1080)) + 'px';
-        };
+        const DEFAULT_FONT_SIZE = 16
+ const docEl = document.documentElement
+  let userWebsetFontDefaultSize = DEFAULT_FONT_SIZE
+  if (docEl.currentStyle) {
+    userWebsetFontDefaultSize = docEl.currentStyle['fontSize']
+  } else {
+    userWebsetFontDefaultSize = getComputedStyle(docEl, false)['fontSize']
+  }
+  userWebsetFontDefaultSize = parseFloat(userWebsetFontDefaultSize)
+  const sizeScale = userWebsetFontDefaultSize / DEFAULT_FONT_SIZE
 
-      if (!doc.addEventListener) return;
-      win.addEventListener(resizeEvt, recalc, false);
-      doc.addEventListener('DOMContentLoaded', recalc, false);
-    })(document, window);
+  function setRemUnit() {
+    let width = docEl.clientWidth
+    /* if (width > 750) {
+      width = 750
+    } */
+    
+    const rem = (width * 100) / 1080 / sizeScale
+    docEl.style.fontSize = rem + 'px'
+  }
+  var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+  window.addEventListener(resizeEvt, setRemUnit, false);
+      document.addEventListener('DOMContentLoaded', setRemUnit, false);
     </script>
     <style>
         html,body{
