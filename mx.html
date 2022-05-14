@@ -7,29 +7,20 @@
     <title></title>
     <link rel="stylesheet" href="./animate.css">
     <script>
-        const DEFAULT_FONT_SIZE = 16
- const docEl = document.documentElement
-  let userWebsetFontDefaultSize = DEFAULT_FONT_SIZE
-  if (docEl.currentStyle) {
-    userWebsetFontDefaultSize = docEl.currentStyle['fontSize']
-  } else {
-    userWebsetFontDefaultSize = getComputedStyle(docEl, false)['fontSize']
-  }
-  userWebsetFontDefaultSize = parseFloat(userWebsetFontDefaultSize)
-  const sizeScale = userWebsetFontDefaultSize / DEFAULT_FONT_SIZE
+        (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          
+          docEl.style.fontSize = Math.floor (100 * (clientWidth / 1080)) + 'px';
+        };
 
-  function setRemUnit() {
-    let width = docEl.clientWidth
-    /* if (width > 750) {
-      width = 750
-    } */
-    
-    const rem = (width * 100) / 1080 / sizeScale
-    docEl.style.fontSize = rem + 'px'
-  }
-  var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
-  window.addEventListener(resizeEvt, setRemUnit, false);
-      document.addEventListener('DOMContentLoaded', setRemUnit, false);
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
     </script>
     <style>
         html,body{
@@ -168,7 +159,8 @@
             width: 1.13rem;
         }
         .gif{
-            font-size: .72rem;
+            /* font-size: .72rem; */
+            font-size: .5rem;
             color: #13c411;
             padding: 0 .2rem 0 .3rem;
             /* font-weight: bold; */
@@ -180,12 +172,14 @@
             position: absolute;
             right: 1.7rem;
             top: .5rem;
-            font-size: .34rem;
+            /* font-size: .34rem; */
+            font-size: .2rem;
             color: #9d9d9f;
         }
         .bigDay{
             font-family: arial,sans-serif;
-            font-size: 1.1rem;
+            /* font-size: 1.1rem; */
+            font-size: 0.7rem;
             color: #1d92f1;
             font-weight: bold;
         }
@@ -193,7 +187,8 @@
             position: absolute;
             bottom: 3.2rem;
             left: 7.5rem;
-            font-size: 0.4rem;
+            /* font-size: 0.4rem; */
+            font-size: 0.25rem;
             transform: scaleY(1.05);
             -webkit-transform: scaleY(1.05);
         }
