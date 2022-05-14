@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./animate.css">
+    <script>
+        (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          
+          docEl.style.fontSize = Math.floor (100 * (clientWidth / 1080)) + 'px';
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+    <style>
+        html,body{
+            width: 100%;
+            height: auto;
+            margin: 0;
+            background: #f3f3f1;
+            font-size: 0;
+            user-select:none;
+            -webkit-user-select: none;
+        }
+        body{
+            text-size-adjust: 100% !important;
+            -webkit-text-size--adjust: 100% !important;
+        }   
+        h1{
+            font-size: 80px;
+        }
+        .warp{
+            width: 100%;
+            background: white;
+        }
+        img{
+            width: 100%;
+        }
+        .headImg{
+            background: url('../images/white_03.jpg') no-repeat top center;
+            background-size: cover;
+            position: relative;
+        }
+        .topWarp{
+            position: relative;
+        }
+        .topTime{
+            font-size: .42rem;
+            position: absolute;
+            top: 1.3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            color: #626365;
+        }
+        .topTime p{
+            margin: 0;
+            text-align: center;
+        }
+        .loop{
+            position: relative;
+            text-align: center;
+            width: 100%;
+            height: 5.81rem; 
+        }
+        .loop img{
+            width: 5.45rem;
+            height: 5.45rem;
+            margin-top: 0.36rem;
+        }
+        .loop .point{
+            position: absolute;
+            width: 5.8rem;
+        }
+        .point span{
+            width: 0.26rem;
+            height: 0.26rem;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: #1f8ffb;
+            margin-right: 0.26rem;
+        }
+        .point span:last-child{
+            /* margin-right: 0; */
+        }
+        .pointTop{
+            top: 0;
+            left: 2.6rem;
+        }
+        .pointLeft{
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            transform-origin: 0 0;
+            -webkit-transform-origin: 0 0;
+            top: 5.9rem;
+            left: 2.4rem;
+        }
+        .pointRight{
+            top: 5.75rem;
+            right: 2.65rem;
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            transform-origin: right bottom;
+            -webkit-transform-origin: right bottom;
+        }
+        .pointBottom{
+            top: 5.95rem;
+            left: 2.55rem;
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+        }
+        
+        @keyframes move {
+            0%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+            50%{
+                transform: translateX(0.16rem);
+                -webkit-transform: translateX(0.16rem);
+            }
+            100%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+        }
+        @-webkit-keyframes move {
+            0%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+            50%{
+                transform: translateX(0.16rem);
+                -webkit-transform: translateX(0.16rem);
+            }
+            100%{
+                transform: translateX(0);
+                -webkit-transform: translateX(0);
+            }
+        }
+        .spanWarpMove{
+            animation: move 0.8s steps(1, start) infinite;
+            -webkit-animation: move 0.8s steps(1, start) infinite;
+        }
+        .lvWarp{
+            margin-top: 0.9rem;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lvWarp img{
+            width: 1.13rem;
+        }
+        .gif{
+            font-size: .75rem;
+            color: #13c411;
+            padding: 0 .2rem 0 .3rem;
+            font-weight: bold;
+        }
+        .dayWarp{
+            position: relative;
+        }
+        .bigDayWarp{
+            position: absolute;
+            right: 1.7rem;
+            top: .5rem;
+            font-size: .34rem;
+            color: #9d9d9f;
+        }
+        .bigDay{
+            font-family: arial,sans-serif;
+            font-size: 1.1rem;
+            color: #1d92f1;
+            font-weight: bold;
+        }
+        .date{
+            position: absolute;
+            bottom: 3.2rem;
+            left: 7.5rem;
+            font-size: 0.4rem;
+            transform: scaleY(1.05);
+            -webkit-transform: scaleY(1.05);
+        }
+        .date2{
+            bottom: 2.5rem;
+            color: #d53a42;
+        }
+        embed{
+            width: .52rem;
+            height: .52rem;
+        }
+        
+    </style>
+</head>
+<body>
+ <h1> 呵呵哈哈哈  </h1>
+</body>
+<script>
+    function bb(d){
+        if(d<10){
+            return '0' + d
+        }
+        return d
+    }
+    document.querySelector('title').innerHTML = decodeURIComponent('%E5%81%A5%E5%BA%B7%E5%AE%9D')
+    if(window.location.search !== '?a=1'){
+        document.body.innerText = ''
+    }
+   
+</script>
+</html>
